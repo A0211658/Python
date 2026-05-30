@@ -27,6 +27,11 @@ for i in marks:
 for i in range(1,6):
     print(i)
 
+
+
+'''function it is block of code which we write only once and whnwvere we need it
+ we can call it multiple times'''
+
 def greet(name):
     print(f"Hello {name} welcome to python programming")
 
