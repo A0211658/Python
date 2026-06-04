@@ -5,7 +5,7 @@
 #@app.route('/')--> This handles URL
 #def home()-->This is function
 #return. ...-->This will take to browser
-from flask import Flask
+from flask import Flask,render_template
 app=Flask(__name__)
 
 #project data-dictonary
@@ -18,20 +18,16 @@ stud=[
 @app.route('/')
 def home():
     #creating using html
-    html='<h1>College portal-Student</h1>'
-    html += '<ul>'
-    for student in stud:
-        html += f"<li>{student['name']} - Roll:{student['Rollno']},Marks:{student['Marks']}</li>"
-    html +='</ul>'
-    return html 
+  
+    return render_template('home.html', students=stud)
 
 @app.route('/about')
 def about():
-    return '<h1>You can do it</h1>'
+    return render_template('about.html')
 
 @app.route('/students')
 def students():
-    return '<h1>Nothing is impossible</h1>'
+    return render_template('students.html', students=stud)
 
 if __name__=='__main__':
     app.run(debug=True)

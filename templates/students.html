@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} students-College Portal {% endblock %}
+{% block content %}
+<h1>All students</h1>
+<p> Total :{{students|length}} students</p>
+
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>Roll no</th>
+        <th>marks</th>
+        <th>Grade</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }} </td>
+        <td>{{ student.Rollno }}</td>
+       <td>{{ student.Marks}} </td>
+       <td>
+        {% if student.Marks>=90 %}
+          Good
+        {% elif student.Marks>=75 %}
+          nice
+        {% elif student.Marks>=60 %}
+          nedd improvement
+        {% else %}
+           fail
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
