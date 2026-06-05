@@ -29,5 +29,9 @@ def about():
 def students():
     return render_template('students.html', students=stud)
 
+@app.route('/department')
+def department():
+    return render_template('department.html')
+
 if __name__=='__main__':
     app.run(debug=True)
