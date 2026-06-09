@@ -1,25 +1,47 @@
 {% extends 'base.html' %}
 {% block title %}Home-College Portal {% endblock %}
 
+
 {% block content %}
-<h1>Welcome to College Portal</h1>
-<p>Total Students:{{students|length}}</p>
-<h2>Quick stats</h2>
-<ul>
-    {% for student in students %}
-      <li>
-        {{student.name}} -
-        {{ students.Marks}} marks -
-        {% if student.Marks>=90 %}
-          Good
-        {% elif student.Marks>=75 %}
-          nice
-        {% elif student.Marks>=60 %}
-          nedd improvement
-        {% else %}
-          fail
-        {% endif %}
-      </li>
-    {% endfor %}
-</ul>
+<center>
+<h1 style="color: navy">Welcome to College Portal</h1>
+<div class="poster" style="border:5px solid black; background-color: beige;">
+    <div class="header">
+        <h2 style="color:royalblue">Government Polytechnic Hingoli</h2>
+        <h1 style="color: orangered;">ADMISSIONS OPEN</h1>
+        <p style="color:gray">Academic Year 2026-27</p>
+    </div>
+    <div calss="content">
+        <h2 style="color:darkgreen">Build Your Future With US!</h2>
+        <div class="features">
+            <div class="feature">
+                <h3 style="color:blueviolet">Quality Education</h3>
+                <p style="color:coral">Experienced Faculty & Modern Curriculum</p>
+            </div>
+            <div class="feature">
+                <h3 style="color:purple">Placements</h3>
+                <p style="color:fuchsia">Industry-Oriented Traning & career Support</p>
+            </div>
+            <div class="feature">
+                <h3 style="color:turquoise">Smart Campus</h3>
+                <p>Modern labs & Digital Learning</p>
+            </div>
+        </div>
+    </div>
+    <div class="date">
+        <h3>Admission start <date:20/6/2026></date:20/6/2026></h3>
+        
+    </div>
+    <div calss="apply">
+       <button class="btn btn-primary"> APPLY NOW...!</button>
+       <p>last date of Admission:5/7/2026</p>
+    </div>
+    <div class="footer">
+        <p style="color:crimson">+91 8554006817</p>
+        <p style="color:cornflowerblue">GPH@gmail1163.com</p>
+        <p style="color:red">Hingoli,MIDC, Limbala Mtaka</p>
+    </div>
+</div>
+</center>
+
 {% endblock %}

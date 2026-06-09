@@ -3,34 +3,150 @@
 {% block content %}
 <h1>All students</h1>
 <p> Total :{{students|length}} students</p>
+<div class="container " style="border:5px solid black; background-color:bisque">
+    <div class="header">
+        <center>
+      <h5 style="color:deeppink">Top students of Computer Engineering which got the highest placement in GPH</h5>
+        </center>
+    </div>
+    <table class="table table-warning">
+           <thead>
+              <tr>
+                  <th>Stuudent Rank:</th>
+                  <th>Student Name:</th>
+                  <th>Marks:</th>
+                  <th>Company Name</th>
+                  <th>Package</th>
+              </tr>
+           </thead>
+           <tr>
+              <td>CO1K</td>   
+              <td>Shrikrishna</td>
+              <td>100</td>
+              <td>Tech Mahindra</td>
+              <td>450000</td>
+           </tr>
+           <tr>
+              <td>CO2K</td>   
+              <td>Arjun</td>
+              <td>99</td>
+              <td>CodeCraft Technilogies</td>
+              <td>420000</td>
+           </tr>
+           <tr>
+              <td>CO3K</td>   
+              <td>Utrra</td>
+              <td>99</td>
+              <td>Info Tech Hub</td>
+              <td>380000</td>
+           </tr>
+           <tr>
+              <td>CO4K</td>   
+              <td>Karn</td>
+              <td>98</td>
+              <td>Encora</td>
+              <td>3750000</td>
+           </tr>
+       </table>
+    </div>
+       <hr/>
+      <div class="container " style="border:5px solid black; background-color:bisque">
+    <div class="header">
+        <center>
+      <h5 style="color:red">Top students of Electrical Engineering which got the highest placement in GPH</h5>
+        </center>
+    </div>
+    <table class="table table-warning">
+           <thead>
+              <tr>
+                  <th>Stuudent Rank:</th>
+                  <th>Student Name:</th>
+                  <th>Marks:</th>
+                  <th>Company Name</th>
+                  <th>Package</th>
+              </tr>
+           </thead>
+           <tr>
+              <td>EJ1K</td>   
+              <td>Bhim</td>
+              <td>100</td>
+              <td>Texas Instruments</td>
+              <td>415000</td>
+           </tr>
+           <tr>
+              <td>EJ2K</td>   
+              <td>Nakul</td>
+              <td>100</td>
+              <td>Samsung Electonics</td>
+              <td>375000</td>
+           </tr>
+           <tr>
+              <td>EJ3K</td>   
+              <td>Nikita</td>
+              <td>99</td>
+              <td>Hitachi Energy</td>
+              <td>350000</td>
+           </tr>
+           <tr>
+              <td>EJ4K</td>   
+              <td>Aarushi</td>
+              <td>98</td>
+              <td>Rivian</td>
+              <td>340000</td>
+           </tr>
+       </table>
+    </div>
+       <hr/>
+        <div class="container " style="border:5px solid black; background-color:bisque">
+    <div class="header">
+        <center>
+      <h5 style="color:purple">Top students of Mechanical Engineering which got the highest placement in GPH</h5>
+        </center>
+    </div>
+    <table class="table table-warning">
+           <thead>
+              <tr>
+                  <th>Stuudent Rank:</th>
+                  <th>Student Name:</th>
+                  <th>Marks:</th>
+                  <th>Company Name</th>
+                  <th>Package</th>
+              </tr>
+           </thead>
+           <tr>
+              <td>ME1K</td>   
+              <td>Vikas</td>
+              <td>98</td>
+              <td>Cummins</td>
+              <td>390000</td>
+           </tr>
+           <tr>
+              <td>ME2K</td>   
+              <td>Tejas</td>
+              <td>98</td>
+              <td>Siemens</td>
+              <td>375000</td>
+           </tr>
+           <tr>
+              <td>ME3K</td>   
+              <td>Nikita</td>
+              <td>99</td>
+              <td>Hitachi Energy</td>
+              <td>350000</td>
+           </tr>
+           <tr>
+              <td>EJ4K</td>   
+              <td>Aarushi</td>
+              <td>98</td>
+              <td>Rivian</td>
+              <td>340000</td>
+           </tr>
+       </table>
+    </div>
+       
+       
+       
 
-<table border="2">
-  <thead border="1">
-    <tr>
-        <th>Name </th>
-        <th>Roll no </th>
-        <th>Marks </th>
-        <th> Grade</th>
-    </tr>
-    </thead>
-    {% for student in students %}
-    <tr>
-        <td>{{ student.name }} </td>
-        <td>{{ student.Rollno }}</td>
-       <td>{{ student.Marks}} </td>
-       <td>
-        {% if student.Marks>=90 %}
-          Good
-        {% elif student.Marks>=75 %}
-          nice
-        {% elif student.Marks>=60 %}
-          nedd improvement
-        {% else %}
-           fail
-        {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
 
-</table>
+
 {% endblock %}
