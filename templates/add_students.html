@@ -5,47 +5,31 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card-header bg-dark text-white">
-           <h2>Add new students</h2>
+<h5>Add New Students</h5>
         </div>
-        <div class="card-body p-4">
-            <form action="{{ url_for('add_students') }}" method="POST">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Student Name</label>
-            <input type="text"
-               name="Student_name"
-               class="form-control">
-       </div>
-       <div class="mb-3">
-           <label class="form-label">Roll No</label>
-           <input type="number"
-               name="roll"
-               class="form-control">
-        </div>
-       <div class="mb-3">
-           <label class="form-label">Marks</label>
-           <input required type="number"
-               name="marks"
-               class="form-control">
-        </div>
-         <div class="mb-3">
-           <label class="form-label">Subject</label>
-           <input type="text"
-               name="subject"
-               class="form-control">
-        </div>
-         <div class="mb-3">
-           <label class="form-label">Attendance</label>
-           <input type="number"
-               name="attendance"
-               class="form-control">
-        </div>
-        <div class="d-grid">
-            <button type="submit" class="btn btn-success">
-                  Add Student
-            </button>
-</form>
-        </div>
+<!-- Plain HTML form -->
+ <div class="card-body p-4">
+ <form action="{{url_for('add_student')}}" method="POST">
+    <div class ="mb-3">
+    <label class="form-label">Student Name:</label>
+        <input required name = "student_name" class="form-control" placeholder="Enter Student name" type="text">
+    <div class ="mb-3">
+        <label class="form-label">Marks:</label>
+             <input required name = "marks" min="0" max="100" class="form-control" placeholder="Enter Marks" type="number">
+    <div class ="mb-3">
+        <label class="form-label">Roll Number: </label>
+            <input required name = "roll" min="0" max="100" class="form-control" placeholder="Enter Roll Number" type="number">
+        <div class ="mb-3">
+        <label class="form-label">Subject:</label>
+            <input required name = "subject" class="form-control" placeholder="Enter Subject" type="text">
+        <div class ="mb-3">
+        <label class="form-label">Attendance:</label>
+             <input required name = "attendance" min="0" max="100" class="form-control" placeholder="Enter Attendance" type="number">
+    <div class="d-grid">
+    <button type="submit" class="btn btn-dark"> Add </button>
+ </form>
+ </div>
     </div>
+</div>
 </div>
 {% endblock %}

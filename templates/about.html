@@ -1,21 +1,85 @@
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h1>College Information</h1>
-        
-            <h2>Three Branches Are Available(Computer,Electical,Mechanical) </h2>
-            <h2 style="color: red;">Features of Our college</h2>
-            <ul type="1">                
-                    <li><h3>Well trained Staff</h3></li>
-                    <li><h3>High facility Available</h3></li>
-                    <li><h3>Clean Classroom</h3></li>
-                    <li><h3>Digital Teaching</h3></li>
-                    <li><h3>Skill Devolpment Program and career guidence</h3></li>
-                    <li><h3>Campus Placement</h3></li>
-                    <li><h3>Good Academic result</h3></li>                
-            </ul>
-    
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}About — College Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <!-- Main card -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header py-3"
+                 style="background-color: #1e3a5f;">
+                <h4 class="mb-0 text-white">
+                    ℹ️ About College Portal
+                </h4>
+            </div>
+            <div class="card-body p-4">
+                <p class="lead text-muted">
+                    College Portal is a student management system built
+                    with Python and Flask. It helps manage student records,
+                    marks and performance tracking.
+                </p>
+                <hr>
+
+                <!-- Tech stack -->
+                <h5 class="fw-bold mb-3">🛠️ Technologies Used</h5>
+                <div class="row">
+                    {% set tech = [
+                        ('🐍', 'Python 3.12', 'Programming Language', 'primary'),
+                        ('🌶️', 'Flask',       'Web Framework',        'danger'),
+                        ('🏗️', 'Jinja2',      'Template Engine',      'success'),
+                        ('🎨', 'Bootstrap 5', 'CSS Framework',        'info'),
+                    ] %}
+                    {% for icon, name, role, color in tech %}
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center
+                                    p-2 rounded bg-light">
+                            <span class="fs-4 me-2">{{ icon }}</span>
+                            <div>
+                                <div class="fw-bold small">{{ name }}</div>
+                                <div class="text-muted" style="font-size:11px;">
+                                    {{ role }}
+                                </div>
+                            </div>
+                            <span class="badge bg-{{ color }} ms-auto">
+                                ✓
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+
+                <!-- Features -->
+                <h5 class="fw-bold mb-3">✨ Features</h5>
+                <div class="row">
+                    {% for feature in [
+                        'Student list with marks',
+                        'Grade classification',
+                        'Performance progress bars',
+                        'Responsive design',
+                        'Professional dashboard',
+                        'Easy navigation'
+                    ] %}
+                    <div class="col-6 mb-2">
+                        <span class="text-success me-1">✅</span>
+                        <small>{{ feature }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-lg px-4"
+                   style="background-color:#1e3a5f; color:white;">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
