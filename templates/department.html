@@ -1,19 +1,54 @@
 {% extends 'base.html' %}
 {% block title %}Home-College Portal {% endblock %}
 {% block content %}
-<h1>Department Page</h1>
-<nav class="navbar-expand-lg bg-secondary">
-  <center>
-    <button class="btn btn-primary">Computer Engineering</button>
-    <button class="btn btn-warning">Electical Engineering</button>
-    <button class="btn btn-danger">Mechanical Engineering</button>
-   </center>
-</nav>
-<br/>
-<div class="container" style="border:5px solid black; background-color: antiquewhite;">
-    <div class="card" ><center>
-        <h4 class="card-title" style="color:blueviolet">Commputer Engineering Department</h4>
- </center>   </div>
+<style>
+        .container{
+            border:5px solid black;
+            border-radius:15px;
+            padding:20px;
+            margin-top:20px;
+        }
+        .card{
+            box-shadow: 0px 0px 10px gray;
+            border-radius:15px;
+            padding:8px;
+            text-align: center;
+        }
+        .card ul{
+            list-style:none;
+            padding: 0;
+        }
+        .card li{
+            text-align: center;
+        }
+        .card-title{
+            text-align: center;
+            font-weight: bold;
+            text-decoration-style: dotted;
+        }
+    .title{ 
+        text-decoration-style: dotted;
+        color:maroon;
+        font-size: 40px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .btn{
+        margin:5px;
+    }
+        </style>
+        <h1 class="title">Department Page</h1>
+        <nav class="navbar-expand-lg bg-secondary">
+        <center>
+            <button class="btn btn-primary">Computer Engineering</button>
+            <button class="btn btn-warning">Electical Engineering</button>
+            <button class="btn btn-danger">Mechanical Engineering</button>
+        </center>
+        </nav>
+        <br/>
+        <div class="container" style="border:5px solid black; background-color: antiquewhite;">
+            <div class="card" >
+                <h4 class="card-title" style="color:blueviolet">Commputer Engineering Department</h4>
+        </div>
     
     <div class="card-body" >
         <i><u><bold>Innovating The Future Through Technology</bold></u></i><br/>
@@ -40,9 +75,9 @@
 </div>
 <br/>
 <div class="container" style="border:5px solid black;background-color: lightgreen;">
-    <div class="card" ><center>
+    <div class="card" >
         <h4 class="card-title" style="color:red;">Electrical Engineering Department</h4>
-</center></div>
+    </div>
     
     <div class="card-body">
         <i><u><bold>Powering The Future Through Innovation and Technology </bold></u></i><br/>
@@ -69,9 +104,9 @@
 </div>
 <br/>
 <div class="container" style="border:5px solid black; background-color:lightpink">
-    <div class="card" ><center>
+    <div class="card" >
         <h4 class="card-title" style="color:mediumseagreen;">Mechanical Engineering Department</h4>
-    </center></div>
+    </div>
     
     <div class="card-body">
         <i><u><bold>Designing ,Building, and Drivving the Future</bold></u></i><br/>
