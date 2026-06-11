@@ -13,16 +13,23 @@ app = Flask(__name__)
 app.secret_key = "linkkiwi2026"  # Needed for flashing messages
 
 students = [
-    {"name": "Tanuja", "roll": 1, "marks": 85},
-    {"name": "Pratiksha", "roll": 2, "marks": 78},
-    {"name": "Shlok", "roll": 3, "marks": 92},
-    {"name": "Lucky", "roll": 4, "marks": 65},
+    {"name": "Mahadev", "roll": 1, "marks": 96},
+    {"name": "Shreekrishna", "roll": 2, "marks": 100},
+    {"name": "Ram", "roll": 3, "marks": 95},
+    {"name": "Hanuman", "roll": 4, "marks": 94},
 ]
 
 
 @app.route("/")
 def home():
-    return render_template("home.html", students=students)  # ← fixed
+    conn = get_db()
+    students = conn.execute('SELECT * FROM students ORDER BY id DESC').fetchall()
+    total=conn.execute('SELECT COUNT(*) FROM students').fetchone()[0]
+    paassed=conn.execute('SELECT COUNT(*) FROM students WHERE marks >= 40').fetchone()[0]
+    execellent=conn.execute('SELECT COUNT(*) FROM students WHERE marks >= 90').fetchone()[0]
+    conn.close()
+    return render_template("home.html", students=students, total=total, passed=paassed, 
+                           excellent=execellent)  # ← fixed
 
 
 @app.route("/students")
@@ -90,6 +97,38 @@ def add_student():
         flash(f"Student {name} added successfully!", "success")
         print(f"Updated students list: {students}")
     return render_template("add_students.html")
+
+@app.route('/edit/<int:id>',methods=["GET", "POST"])
+def edit_student(id):
+    conn = get_db()
+    
+    if request.method == "POST":
+        name = request.form["student_name"]
+        marks = request.form["marks"]
+        roll = request.form["roll"]
+        subject = request.form["subject"]
+        attendance = request.form["attendance"]
+        
+        if not name or not marks:
+            flash('Please provide both name and marks', 'danger')
+            return redirect(url_for('edit_student', id=id))
+        
+        conn.execute('''UPDATE students SET name=?, roll=?, marks=?, subject=?, attendance=? WHERE id=?''',
+                     (name, roll, int(marks), subject, int(attendance), id))
+        conn.commit()
+        conn.close()
+        
+        flash(f"Student {name} updated successfully!", "success")
+        return redirect(url_for('students_page'))
+    student = conn.execute('SELECT * FROM students WHERE id = ?', (id,)).fetchone()
+    conn.close()
+    if student is None:
+        flash("Student not found", "danger")
+        return redirect(url_for('students_page'))
+    return render_template("edit_student.html", student=student)
+    
+
+        
 
 
 @app.route("/about")

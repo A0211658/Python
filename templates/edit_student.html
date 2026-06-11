@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Edit Portal{% endblock %}
+{% block content %}
+<div class="row" justify-content center>
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header py-3" style="background-color: chartreuse;">
+                <h5 class="mb-0 text-white">
+                    Edit Student
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="alert alert-info" py-2 mb-4>
+                    <small>
+                        <strong>Editing:</strong>
+                        {{ student['name']}}
+                        Roll No:{{ student['roll'] }}-
+                        Marks:{{ student['marks'] }}
+                    </small>
+                </div>
+                <form action="{{url_for('edit_student', id=student['id'])}}" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">student name:</label>
+                    </div>
+                    <input required
+                         name="student_name"
+                         class="form-control"
+                         placeholder="Enter student Name:"
+                         type="text"
+                         value="{{ student['name']}}"/>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">student Roll No:</label>
+                    </div>
+                     <input required
+                         name="roll"
+                         class="form-control"
+                         placeholder="Enter student Roll No:"
+                         type="number"
+                         value="{{ student['roll']}}"/>
+
+                     <div class="mb-3">
+                        <label class="form-label fw-bold">student Marks:</label>
+                    </div>
+                     <input required
+                         name="marks"
+                         class="form-control"
+                         placeholder="Enter student Marks:"
+                         type="number"
+                         value="{{ student['marks']}}"/>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Subject:</label>
+                    </div>
+                     <input required
+                         name="subject"
+                         class="form-control"
+                         placeholder="Enter student Subject name:"
+                         type="text"
+                         value="{{ student['subject']}}"/>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">student Attendance:</label>
+                    </div>
+                     <input required
+                         name="attendance"
+                         class="form-control"
+                         placeholder="Enter student Attendance:"
+                         type="number"
+                         value="{{ student['attendance']}}"/>
+                    <div class="card-footer">
+                        <button class="btn btn-warning">Sava Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
