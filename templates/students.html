@@ -16,6 +16,13 @@
         {{ students|length }} Records
     </span>
 </div>
+<div class="mb-3">
+    <input type="text"
+    id="searchInput"
+    class="form-control form-control-lg"
+    placeholder="type to search student name"/>
+</div>
+
 <!-- Stats summary bar -->
 <div class="row mb-4">
     {% set excellent = students|selectattr('marks','ge',90)|list %}
@@ -50,9 +57,9 @@
                         <th class="py-3">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabelBody">
                     {% for student in students %}
-                    <tr class="align-middle">
+                    <tr class="align-middle" data-name="{{student.name|lower}}">
                         <td class="ps-4 text-muted">
                             {{ loop.index }}
                         </td>
@@ -107,12 +114,15 @@
                             <a href="{{ url_for('student_detail', id=student.id) }}"
                              class="btn btn-sm btn-primary">View
                             </a>
-                            <a href="{{ url_for('delete_student', id=student.id) }}" 
-                               class="btn btn-sm btn-danger">Delete
-                            </a>
-                            <a href="{{ url_for('edit_student', id=student.id) }}" 
-                              class="btn btn-sm btn-warning">Edit
-                          </a>
+                            {% if session.role=='admin' %}
+                                <a href="{{ url_for('delete_student', id=student.id) }}" 
+                                class="btn btn-sm btn-danger">Delete
+                                </a>
+                                
+                                <a href="{{ url_for('edit_student', id=student.id) }}" 
+                                class="btn btn-sm btn-warning">Edit
+                              </a>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
@@ -121,6 +131,34 @@
         </div>
     </div>
 </div>
+<script>
+    const searchInput=document.getElementById('searchInput')
+    const allRows=document.querySelectorAll('#tabelBody tr')
+    const resultInfo=document.getElementById('resultInfo')
+    const noResults=document.getElementById('noResults')
+    const studentsTabel=document.getElementById('studentsTabel')
+     searchInput.addEventListener('keyup',function(){
+                const query=this.value.toLowerCase();
+                let matchCount=0;
+                allRows.forEach(function(row){
+                    const name=row.dataset.name ||'';
+                    if(name.includes(query))
+                    {
+                         row.style.display="";
+                         matchCount++;
+
+                    }else{
+                        row.style.display="none";
+                    }
+                })
+            })
+// function clearSearch(){
+//     searchInput.value='';
+//     searchInput.dispatchEvent(new Event('keyup'))
+// }
+</script>
+
+
 <br/>
 <hr/>
 <div class="container " style="border:5px solid black; background-color:bisque">

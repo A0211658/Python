@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Department-Collge Portal{% endblock %}
+{% block content %}
+<center>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card-shadow-sm mb-4 mt-4" style="border: 5px solid black;">
+            <div class="card-header py-3"
+                 style="background-color: purple;">
+                 <h4 class="mb-0 text-white">
+                  <center>🏬 Department Page</center>
+                 </h4>
+                
+            </div>
+            <div class="card-body p-4">
+                <center>
+                <h3 style="color:rgb(215, 11, 215)">Choose Your Department</h3>
+                  <a href="{{ url_for('computer') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:greenyellow; color:purple;">
+                    👨‍💻Computer Engineering
+                </a><br/>
+                 
+                  <a href="{{ url_for('electrical') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:orangered; color:purple;">
+                    ⚡Electrical Engineering
+                </a><br/>
+                 <a href="{{ url_for('mechanical') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:mediumpurple; color:purple;">
+                    🦾Mechanical Engineering
+                </a><br/>
+
+                <!-- <button class="btn btn-outline-primary">
+                    Computer Engineering</button><br/>
+                <button class="btn btn-outline-danger mb-4">Electrical Engineering</button><br/>
+                <button class="btn btn-outline-warning mb-4">Mechanical Engineering</button> -->
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+{% endblock %}

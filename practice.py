@@ -33,4 +33,5 @@ def delete_students():
     conn.close()
     flash("Student Deleted successfully")
 
+
     

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}👨‍💻Computer — College Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-10">
+
+        <!-- Main card -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header py-3"
+                 style="background-color: purple;">
+                <h4 class="mb-0 text-white">
+                   Computer Engineering Department
+                </h4>
+            </div>
+            <div class="card-body p-4">
+               <div class="width-100">
+                    <marquee class="headquote" style="background-color: darkorchid; color:azure">
+                         👉🏻Coding the Fucture with innovation, excellence and lifelong learning. Creating responsible 
+                         engineers who lead the world throuh Technology.
+                     </marquee>
+               </div>
+               <h4 class="fw-bold fs-5">📝Program Outcomes</h4>
+                <p style="margin-right: 100px;">
+                    1.Basic and Discipline specific knowledge.<br/>
+                    2.Problem analysis.<br/>
+                    3.Design/ development of solutions.<br/>
+                    4.Engineering Tools, Experimentation and Testing.<br/>
+                    5.Engineering practices for society, sustainability and environment.<br/>
+                    6.Project Management.<br/>
+                    7.Life-long learning
+                </p>
+                <hr>
+                <h5 class="fw-bold mb-3">✨ Features</h5>
+                <div class="row">
+                    {% for feature in [
+                       '🖥️Well-equipped computer laboraties',
+                       '🛜High-speed Internet and Wi-Fi connectivity',
+                       '🏫Smart Classrooms with Digital Learning',
+                       '💡Project-based and Practical Learning',
+                       '🏭Industry Visit and Interrnship',
+                       '🎯Placement',
+                       '👩🏻‍🏫Experienced and Qualified Faculty Members',
+                       '⏱️Strong Focus on Innvotation, Research and Enterprenurship',
+
+                        
+                    ] %}
+                    <div class="col-6 mb-2">
+                        <span class="text-success me-1">✅</span>
+                        <small>{{ feature }}</small>
+                    </div>
+                    {% endfor %}
+                </div>    
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary mb-3 mt-4">💵Placements</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-danger mb-3 mt-4">Staff Members</button>
+                          
+                    </div>
+                </div>
+                <span class="badge bg-{{ color }} ms-auto">
+                    ✓
+                </span>
+                
+                <div class="card-footer">
+                    <label>Email Of our department:</label>
+                    <button class="btn btn-link">GPHComputer@1163gmail.com</button><br/>
+        
+                        <h5 style="color:red" font-size="20px">Hurry Up....!🏃🏻‍♀️‍➡️🏃🏻‍♀️‍➡️🏃🏻‍♀️‍➡️</h5><br/>
+                        <h5 style="color:red">Only few seats are availabel</h5><br/>   
+                        <button class="btn btn-warning">Admission Open</button>    
+                 </div>
+                <hr/><br/>
+                <a href="{{ url_for('department') }}"
+                   class="btn btn-lg px-4"
+                   style="background-color:purple; color:white;">
+                    ⏪🔙Department Page
+                </a>
+            
+       
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
