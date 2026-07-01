@@ -1,134 +1,45 @@
 {% extends 'base.html' %}
-{% block title %}Home-College Portal {% endblock %}
+{% block title %}Department-Collge Portal{% endblock %}
 {% block content %}
-<style>
-        .container{
-            border:5px solid black;
-            border-radius:15px;
-            padding:20px;
-            margin-top:20px;
-        }
-        .card{
-            box-shadow: 0px 0px 10px gray;
-            border-radius:15px;
-            padding:8px;
-            text-align: center;
-        }
-        .card ul{
-            list-style:none;
-            padding: 0;
-        }
-        .card li{
-            text-align: center;
-        }
-        .card-title{
-            text-align: center;
-            font-weight: bold;
-            text-decoration-style: dotted;
-        }
-    .title{ 
-        text-decoration-style: dotted;
-        color:maroon;
-        font-size: 40px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .btn{
-        margin:5px;
-    }
-        </style>
-        <h1 class="title">Department Page</h1>
-        <nav class="navbar-expand-lg bg-secondary">
-        <center>
-            <button class="btn btn-primary">Computer Engineering</button>
-            <button class="btn btn-warning">Electical Engineering</button>
-            <button class="btn btn-danger">Mechanical Engineering</button>
-        </center>
-        </nav>
-        <br/>
-        <div class="container" style="border:5px solid black; background-color: antiquewhite;">
-            <div class="card" >
-                <h4 class="card-title" style="color:blueviolet">Commputer Engineering Department</h4>
+<center>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card-shadow-sm mb-4 mt-4" style="border: 5px solid black;">
+            <div class="card-header py-3"
+                 style="background-color: purple;">
+                 <h4 class="mb-0 text-white">
+                  <center>🏬 Department Page</center>
+                 </h4>
+                
+            </div>
+            <div class="card-body p-4">
+                <center>
+                <h3 style="color:rgb(215, 11, 215)">Choose Your Department</h3>
+                  <a href="{{ url_for('computer') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:greenyellow; color:purple;">
+                    👨‍💻Computer Engineering
+                </a><br/>
+                 
+                  <a href="{{ url_for('electrical') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:orangered; color:purple;">
+                    ⚡Electrical Engineering
+                </a><br/>
+                 <a href="{{ url_for('mechanical') }}"
+                   class="btn btn-lg px-4 mb-3"
+                   style="background-color:mediumpurple; color:purple;">
+                    🦾Mechanical Engineering
+                </a><br/>
+
+                <!-- <button class="btn btn-outline-primary">
+                    Computer Engineering</button><br/>
+                <button class="btn btn-outline-danger mb-4">Electrical Engineering</button><br/>
+                <button class="btn btn-outline-warning mb-4">Mechanical Engineering</button> -->
+                </center>
+            </div>
         </div>
-    
-    <div class="card-body" >
-        <i><u><bold>Innovating The Future Through Technology</bold></u></i><br/>
-        <h5>Head Of Department: Nilesh jadhav</h5>
-        <h5>lab Assistent:Ranvijay Shinde</h5>
-        <u>It is the batch of 75 Students</u><br/>
-        <bold>******Facilities availabel*****</bold>
-        <ul>
-            <li>Advance computer Labs</li>
-            <li>High-speed Internet</li>
-            <li>Digital Library</li>
-            <li>Project Development center</li>
-            <li>coding club and techanical events</li>
-        </ul>
-    </div>
-    <div class="card-footer">
-        <label>Email Of our department:</label>
-        <button class="btn btn-link">GPHComputer@1163gmail.com</button><br/>
-        
-            <h5 style="color:red" font-size="20px">Hurry Up....!</h5><br/>
-            <h5 style="color:red"><i>Only few seats are availabel</i></h5><br/>   
-            <button class="btn btn-primary">Admission Open</button>    
     </div>
 </div>
-<br/>
-<div class="container" style="border:5px solid black;background-color: lightgreen;">
-    <div class="card" >
-        <h4 class="card-title" style="color:red;">Electrical Engineering Department</h4>
-    </div>
-    
-    <div class="card-body">
-        <i><u><bold>Powering The Future Through Innovation and Technology </bold></u></i><br/>
-        <h5>Head Of Department: Radha patil</h5>
-        <h5>lab Assistent:Kunal Pawar</h5>
-        <u>It is the batch of 75 Students</u><br/>
-        <bold>******Facilities availabel*****</bold>
-        <ul>
-        <li>Electical machine laboratory</li>
-        <li>Power System laboratory</li>
-        <li>Control System laboratory</li>
-        <li>Renewable Energy laboratory</li>
-        <li>Internet and Digital Learning resources</li>
-        </ul>
-    </div>
-    <div class="card-footer">
-        <label>Email Of our department:</label>
-        <button class="btn btn-link">GPHElectrical@1163gmail.com</button><br/>
-        
-            <h5 style="color:red" font-size="20px">Hurry Up....!</h5><br/>
-            <h5 style="color:red">Only few seats are availabel</h5><br/>   
-            <button class="btn btn-warning">Admission Open</button>    
-    </div>
-</div>
-<br/>
-<div class="container" style="border:5px solid black; background-color:lightpink">
-    <div class="card" >
-        <h4 class="card-title" style="color:mediumseagreen;">Mechanical Engineering Department</h4>
-    </div>
-    
-    <div class="card-body">
-        <i><u><bold>Designing ,Building, and Drivving the Future</bold></u></i><br/>
-        <h5>Head Of Department:Pavan Patil</h5>
-        <h5>Workshop Incharge:Aabhimanyu Jadhav</h5>
-        <u>It is the batch of 75 Students</u><br/>
-        <bold>******Facilities availabel*****</bold>
-        <ul>
-           <li>Mechanical Workshop</li>
-           <li>Manufacturing Technology Lab</li>
-           <li>Automobile Engineering Lab</li>
-           <li>Thermal Engineering Lab</li>
-           <li>CAD/CAM Library</li>
-        </ul>
-    </div>
-    <div class="card-footer">
-        <label>Email Of our department:</label>
-        <button class="btn btn-link">GPHMechanical@1163gmail.com</button><br/>
-        
-            <h5 style="color:red" font-size="20px">Hurry Up....!</h5><br/>
-            <h5 style="color:red">Only few seats are availabel</h5><br/>   
-            <button class="btn btn-success">Admission Open</button>    
-    </div>
-</div>
+</center>
 {% endblock %}

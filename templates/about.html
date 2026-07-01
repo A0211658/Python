@@ -9,76 +9,116 @@
         <!-- Main card -->
         <div class="card shadow-sm mb-4">
             <div class="card-header py-3"
-                 style="background-color: #1e3a5f;">
+                 style="background-color: purple;">
                 <h4 class="mb-0 text-white">
                     ℹ️ About College Portal
                 </h4>
             </div>
             <div class="card-body p-4">
-                <p class="lead text-muted">
-                    College Portal is a student management system built
-                    with Python and Flask. It helps manage student records,
-                    marks and performance tracking.
+                <h4>In About page You will get Answer of your question.</h4>
+                <p style="margin-right: 100px;">
+                    1.Why should I take admission in this college?<br/>
+                    2.How will this college help me achieve my career goals?<br/>
+                    3.What is the placements record of the college?<br/>
+                    4.Does this college provide internship opprtunities?<br/>
+                    5.Are all required facilities is available in this coellge?<br/>
                 </p>
                 <hr>
-
-                <!-- Tech stack -->
-                <h5 class="fw-bold mb-3">🛠️ Technologies Used</h5>
-                <div class="row">
-                    {% set tech = [
-                        ('🐍', 'Python 3.12', 'Programming Language', 'primary'),
-                        ('🌶️', 'Flask',       'Web Framework',        'danger'),
-                        ('🏗️', 'Jinja2',      'Template Engine',      'success'),
-                        ('🎨', 'Bootstrap 5', 'CSS Framework',        'info'),
-                    ] %}
-                    {% for icon, name, role, color in tech %}
-                    <div class="col-6 mb-3">
-                        <div class="d-flex align-items-center
-                                    p-2 rounded bg-light">
-                            <span class="fs-4 me-2">{{ icon }}</span>
-                            <div>
-                                <div class="fw-bold small">{{ name }}</div>
-                                <div class="text-muted" style="font-size:11px;">
-                                    {{ role }}
-                                </div>
-                            </div>
-                            <span class="badge bg-{{ color }} ms-auto">
-                                ✓
-                            </span>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <hr>
-
-                <!-- Features -->
                 <h5 class="fw-bold mb-3">✨ Features</h5>
                 <div class="row">
                     {% for feature in [
-                        'Student list with marks',
-                        'Grade classification',
-                        'Performance progress bars',
-                        'Responsive design',
-                        'Professional dashboard',
-                        'Easy navigation'
+                       '🎓Qualified and Experienced Faculty',
+                       '🏫Modern classrooms and Smart Boards',
+                       '📚Rich Library with Digital Resources',
+                       '🏆Sports And Culutral Activities',
+                       '🏭Industry Visit and Interrnship',
+                       '🎯Good Placement record',
+                       '🔐Safe and Secure campus',
+                       '🏠Hostel facilities(if eligible)',
+
+                        
                     ] %}
                     <div class="col-6 mb-2">
                         <span class="text-success me-1">✅</span>
                         <small>{{ feature }}</small>
                     </div>
                     {% endfor %}
+                </div>    
+                <hr/>
+                <!-- Tech stack -->
+                <h5 class="fw-bold mb-3" style="color:rebeccapurple">🎥College Records</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary mb-3">🏆Sports</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-danger mb-3">Achivements</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-success mb-3">Events</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-warning mb-3">Department</button><br/>
+                        
+                        <button class="btn btn-info mb-3">🏠Hostel</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-secondary mb-3">Staff Management</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-dark mb-3">Placement</button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-link mb-3">Toppers</button>                
+                    </div>
                 </div>
+                <span class="badge bg-{{ color }} ms-auto">
+                    ✓
+                </span>
+                <hr/>
+                <div class="container d-flex">
+                   <div class="col-md-4">
+                        <div class="image">
+                            <div class="width-100">
+                                <img src="static/Principal.jpg" alt="logo" 
+                                width="300" height="300" class="rounded-pill">
+                                Mr.B.P.Devaskar<br/>
+                                Principal<br/>
+                                of Government Polytechnic Hingoli
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="color:purple">💬Principal Message</h3>
+                        <p class="lead-text-muted">
+                            <b>Welcome to Government Polytechnic Hingoli</b><br/>
+                            It Gives me immense pleasure to Welcome you to our institutio. Our coellge is commited 
+                            to providing quallity techanical education and fostering innovation, creativity, and 
+                            professional excellence among students.
+                            we strive to create a learning enviorment that encourages academic achivements that 
+                            encourages academic achivements ,skill development  and ethical values. Through
+                             Dedicated faculty ,modern infrastructure and industry-oriented tranninng , we prepaer our 
+                             students to meet the challenges of the rapidly evolving techanical world.
+                             I encourage evry student to make the best use of the opprtunities available
+                             at our innstitution and work with dedication ,discipline to achive their goals<br/>
+                            Together, let us build a brighter future through knowledge, innovation, 
+                            and excellence.
 
-                <hr>
+
+                             
+                        </p>
+                    </div>
+                </div>
+                <hr/><br/>
                 <a href="{{ url_for('home') }}"
                    class="btn btn-lg px-4"
-                   style="background-color:#1e3a5f; color:white;">
+                   style="background-color:purple; color:white;">
                     ← Back to Home
                 </a>
+            
+       
             </div>
         </div>
-
     </div>
 </div>
 

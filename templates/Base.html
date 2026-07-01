@@ -15,7 +15,7 @@
             min-height: 60px;
         }
         :root {
-            --brand: #1e3a5f;
+            --brand:purple;
         }
         .navbar-brand-custom { background-color: var(--brand); }
         .btn-brand {
@@ -23,9 +23,9 @@
             color: white;
             border: none;
         }
-        .btn-brand:hover { background-color: #162d4a; color: white; }
+        .btn-brand:hover { background-color:purple; color: white; }
         .hero-section {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d6a9f 100%);
+            background: linear-gradient(135deg, purple 0%,purple 100%);
             color: white;
             border-radius: 12px;
         }
@@ -55,16 +55,23 @@
 
     <!-- Professional Navbar -->
     <nav class="navbar navbar-expand navbar-dark shadow-sm"
-         style="background-color: #1e3a5f;">
+         style="background-color:purple;">
         <div class="container justify-content-center">
 
             <!-- Brand / Logo -->
             <a class="navbar-brand fw-bold fs-5 me-3" href="{{ url_for('home') }}">
                 🎓 College Portal
             </a>
+             <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+             <span class="navbar-toggler-icon"></span>
+
+            </button>
 
             <!-- Nav links — always visible, centered -->
-            <div class="navbar-nav">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav"></div>
                 <a class="nav-link px-2 py-1" href="{{ url_for('home') }}">
                     🏠 Home
                 </a>
@@ -123,7 +130,7 @@
 </div>
 
     <!-- Professional Footer -->
-    <footer style="background-color: #1e3a5f;" class="text-white text-center py-3 mt-5">
+    <footer style="background-color: purple;" class="text-white text-center py-3 mt-5">
         <small>
             🎓 College Portal &nbsp;|&nbsp;
             Built with Python + Flask + Bootstrap &nbsp;|&nbsp;

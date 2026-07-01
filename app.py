@@ -264,6 +264,18 @@ def subjects():
     conn.close()
     return render_template("subjects.html", rows=rows)
 
+@app.route('/computer')
+def computer():
+    return render_template('computer.html')
+
+@app.route('/electrical')
+def electrical():
+    return render_template('electrical.html')
+
+@app.route('/mechanical')
+def mechanical():
+    return render_template('mechanical.html')
+
 def page_not_found(e):
     return render_template("404.html"), 404
 
