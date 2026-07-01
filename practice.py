@@ -34,4 +34,9 @@ def delete_students():
     flash("Student Deleted successfully")
 
 
-    
+ <a class="nav-link px-2 py-1" href="{{ url_for('students_page')}}">
+                 Placements
+            </a>
+             <a class="nav-link px-2 py-1" href="{{ url_for('add_student') }}">
+                    ➕ Add Student
+            </a>

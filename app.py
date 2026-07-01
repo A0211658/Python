@@ -270,6 +270,6 @@ def page_not_found(e):
 init_db()  # Initialize the database
 
 if __name__ == "__main__":
-   
-    app.run(debug=True)
+#    init_db()  # Initialize the database
+   app.run(debug=True)
     
