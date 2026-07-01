@@ -276,6 +276,10 @@ def electrical():
 def mechanical():
     return render_template('mechanical.html')
 
+@app.route('/placements')
+def placements():
+    return render_template("placements.html")
+
 def page_not_found(e):
     return render_template("404.html"), 404
 

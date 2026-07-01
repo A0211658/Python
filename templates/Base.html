@@ -54,64 +54,100 @@
 <body class="bg-light">
 
     <!-- Professional Navbar -->
-    <nav class="navbar navbar-expand navbar-dark shadow-sm"
-         style="background-color:purple;">
-        <div class="container justify-content-center">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: purple;">
+    <div class="container">
 
-            <!-- Brand / Logo -->
-            <a class="navbar-brand fw-bold fs-5 me-3" href="{{ url_for('home') }}">
-                🎓 College Portal
-            </a>
-             <button class="navbar-toggler" type="button"
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">
+            🎓 College Portal
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-             <span class="navbar-toggler-icon"></span>
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-            </button>
+            <!-- Navigation Links -->
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
-            <!-- Nav links — always visible, centered -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav"></div>
-                <a class="nav-link px-2 py-1" href="{{ url_for('home') }}">
-                    🏠 Home
-                </a>
-                <a class="nav-link px-2 py-1" href="{{ url_for('students_page') }}">
-                    👨‍🎓 Students
-                </a>
-                <a class="nav-link px-2 py-1" href="{{ url_for('subjects') }}">
-                    � Subjects
-                </a>
-                <a class="nav-link px-2 py-1" href="{{ url_for('about') }}">
-                    ℹ️ About
-                </a>
-                <a class="nav-link px-2 py-1" href="{{ url_for('add_student') }}">
-                    ➕ Add Student
-                </a>
-                <a class="nav-link px-2 py-1" href="{{ url_for('department')}}">
-                      👩‍💻Department
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">🏠 Home</a>
+                </li>
 
-                <a class ="nav-link px-2 py-1" href="{{ url_for('filter_students') }}">
-                    🔍 Filter
-                </a>
-                
-                <form class="d-flex ms-3 mt-3" action="{{ url_for('search') }}" method="GET">
-                    <input class="form-control form-control-sm me-2" style="width:130px; height:35px" type="search" placeholder="Search" name="q">
-                    <button class="btn btn-outline-light btn-sm" style="width:100px; height:35px" type="submit">Search</button>
-                </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('students_page') }}">👨‍🎓 Students</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('subjects') }}">📚 Subjects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">ℹ️ About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('add_student') }}">➕ Add Student</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('department') }}">👩‍💻 Department</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('filter_students') }}">🔍 Filter</a>
+                </li>
+
+                <!-- Search -->
+                <li class="nav-item">
+                    <form class="d-flex my-2 my-lg-0 ms-lg-3"
+                          action="{{ url_for('search') }}"
+                          method="GET">
+                        <input class="form-control me-2"
+                               type="search"
+                               placeholder="Search"
+                               name="q">
+
+                        <button class="btn btn-outline-light" type="submit">
+                            Search
+                        </button>
+                    </form>
+                </li>
+
+                <!-- Login / Logout -->
                 {% if session.username %}
-                    <span class="nav-link px-2 py-1 text-white">👤 {{ session.username }}</span>
-                    <a class="nav-link px-2 py-1" href="{{ url_for('logout') }}">
-                        🔓 Logout
-                    </a>
+                    <li class="nav-item">
+                        <span class="nav-link text-white">
+                            👤 {{ session.username }}
+                        </span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">
+                            🔓 Logout
+                        </a>
+                    </li>
                 {% else %}
-                    <a class="nav-link px-2 py-1" href="{{ url_for('login') }}">
-                        🔒 Login
-                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">
+                            🔒 Login
+                        </a>
+                    </li>
                 {% endif %}
-            </div>
+
+            </ul>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
 <div class="container mt-4 mb-5">
     {% with messages = get_flashed_messages(with_categories=true) %}

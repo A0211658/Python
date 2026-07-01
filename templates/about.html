@@ -76,39 +76,48 @@
                     ✓
                 </span>
                 <hr/>
-                <div class="container d-flex">
-                   <div class="col-md-4">
-                        <div class="image">
-                            <div class="width-100">
-                                <img src="static/Principal.jpg" alt="logo" 
-                                width="300" height="300" class="rounded-pill">
-                                Mr.B.P.Devaskar<br/>
-                                Principal<br/>
-                                of Government Polytechnic Hingoli
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 style="color:purple">💬Principal Message</h3>
-                        <p class="lead-text-muted">
-                            <b>Welcome to Government Polytechnic Hingoli</b><br/>
-                            It Gives me immense pleasure to Welcome you to our institutio. Our coellge is commited 
-                            to providing quallity techanical education and fostering innovation, creativity, and 
-                            professional excellence among students.
-                            we strive to create a learning enviorment that encourages academic achivements that 
-                            encourages academic achivements ,skill development  and ethical values. Through
-                             Dedicated faculty ,modern infrastructure and industry-oriented tranninng , we prepaer our 
-                             students to meet the challenges of the rapidly evolving techanical world.
-                             I encourage evry student to make the best use of the opprtunities available
-                             at our innstitution and work with dedication ,discipline to achive their goals<br/>
-                            Together, let us build a brighter future through knowledge, innovation, 
-                            and excellence.
+                  <div class="container my-5">
+    <div class="row align-items-center">
 
+        <!-- Principal Image -->
+        <div class="col-lg-4 col-md-5 col-12 text-center mb-4">
+            <img src="{{ url_for('static', filename='Principal.jpg') }}"
+                 alt="Principal"
+                 class="img-fluid rounded-circle shadow"
+                 style="max-width:280px;">
 
-                             
-                        </p>
-                    </div>
-                </div>
+            <h5 class="mt-3 mb-1">Mr. B. P. Devaskar</h5>
+            <p class="text-muted">
+                Principal<br>
+                Government Polytechnic Hingoli
+            </p>
+        </div>
+
+        <!-- Principal Message -->
+        <div class="col-lg-8 col-md-7 col-12">
+
+            <h3 class="text-center text-md-start mb-3" style="color:purple;">
+                💬 Principal's Message
+            </h3>
+
+            <p class="text-muted" style="text-align:justify; line-height:1.8;">
+                <strong>Welcome to Government Polytechnic Hingoli.</strong><br><br>
+
+                It gives me immense pleasure to welcome you to our institute. Our college is committed to providing quality technical education and fostering innovation, creativity, and professional excellence among students.
+
+                We strive to create a learning environment that encourages academic achievement, skill development, and ethical values. Through our dedicated faculty, modern infrastructure, and industry-oriented training, we prepare students to meet the challenges of the rapidly evolving technological world.
+
+                I encourage every student to make the best use of the opportunities available at our institution and work with dedication, discipline, and determination to achieve their goals.
+
+                <br><br>
+
+                Together, let us build a brighter future through knowledge, innovation, and excellence.
+            </p>
+
+        </div>
+
+    </div>
+</div>
                 <hr/><br/>
                 <a href="{{ url_for('home') }}"
                    class="btn btn-lg px-4"

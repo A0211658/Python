@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Placement-college portal{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+
+        <!-- Main card -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header py-3"
+                 style="background-color: purple;">
+                <h4 class="mb-0 text-white">
+                   💸Placements
+                </h4>
+            </div>
+            <div class="card-body p-4">
+                <h4>Our institute consistently achieves successful placements every year, with students from each branch
+                     being recruited by leading companies.</h4>
+                    <br/> <h4>Computer Engineering</h4>
+                    <div class="progress">     
+                        <div class="progress-bar progress-bar-striped" style="width:37%;">
+                            37%
+                        </div>
+                    </div>
+                  <br/>
+                  <h4>Electrical Engineering</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-danger" style="width:30%;">
+                            30%
+                        </div>
+                    </div>
+                    <br/>
+                    <h4>Mechanical Engineering</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width:43%;">
+                            43%
+                        </div>
+                    </div>
+                <hr/><br/>
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-lg px-4"
+                   style="background-color:purple; color:white;">
+                    ← Back to Home
+                </a>
+            
+       
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
